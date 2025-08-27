@@ -7,7 +7,7 @@
 ### Resource
 - Kind: +1
 - Encounter a resource that can be retrived
-- [Resource encounters](Resources.md)
+- [Resource encounters](Resources_encounters.md)
 ### Random output
 - Kind: -1/0/+1
 - Random encounter

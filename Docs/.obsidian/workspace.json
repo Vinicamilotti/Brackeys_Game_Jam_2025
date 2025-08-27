@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Combat.md",
-                "mode": "source",
+                "file": "Random.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Combat"
+              "title": "Random"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Combat.md",
+                "file": "Random.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Combat"
+              "title": "Backlinks for Random"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Combat.md",
+                "file": "Random.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Combat"
+              "title": "Outgoing links from Random"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Combat.md",
+                "file": "Random.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Combat"
+              "title": "Outline of Random"
             }
           }
         ]
@@ -172,11 +172,14 @@
   "active": "878770533b4df604",
   "lastOpenFiles": [
     "Resorces_SpareParts.md",
-    "Random.md",
-    "Encounters.md",
-    "Resoureces_food.md",
+    "Resources_encounters.md",
+    "Upgrade_Automatic_Farm.md",
     "Resources_Fuel.md",
-    "Resources.md",
+    "Resoureces_food.md",
+    "Encounters.md",
+    "Random.md",
+    "Week.md",
+    "Planet.md",
     "Combat.md"
   ]
 }

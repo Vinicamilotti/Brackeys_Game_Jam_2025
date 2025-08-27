@@ -3,7 +3,7 @@
 - Description: What a waste of time...
 ## Jolly Cooperation
 - Title: Jolly Cooperation
-- Description: Cool aliens cool aliens gift you with: 
+- Description: You found cool aliens with cute faces, waving their little arms. They gift you with: 
 	- (1 - 2) + GalaxyDepth [Fuel](Resources_Fuel.md)
 	- (3 - 4) + GalaxyDepth [Spare parts](Resorces_SpareParts.md)
 	- (2 - 5) * GalaxyDepeth [Food](Resoureces_food.md)
