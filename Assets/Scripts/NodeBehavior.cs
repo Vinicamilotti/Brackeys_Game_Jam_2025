@@ -12,7 +12,8 @@ public class Node : MonoBehaviour
 
     public void SetState(NodeState state)
     {
-        switch (state)
+        State = state;
+        switch (State)
         {
             case NodeState.Active:
                 sprite.color = Color.black;
@@ -23,18 +24,13 @@ public class Node : MonoBehaviour
             case NodeState.Inactive:
                 sprite.color = Color.white;
                 break;
-               
+
         }
     }
+ 
     public void TravelHere()
     {
-        if (State != NodeState.CanTravel)
-        {
-            return;
-        }
-
-        ExpeditionState.SetActiveNode(this);
-
+          ExpeditionState.SetActiveNode(this);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
