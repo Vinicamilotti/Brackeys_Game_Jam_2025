@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class NodeInputHandler : MonoBehaviour
 {
+    public int depthLevel;
     Camera MainCamera;
     public Node node;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
