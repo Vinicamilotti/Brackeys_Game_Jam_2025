@@ -22,7 +22,7 @@ public class NodeInputHandler : MonoBehaviour
         }
         
         var rayHit = Physics2D.GetRayIntersection(MainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        if (rayHit.collider.gameObject != this.gameObject)
+        if (!rayHit.collider || rayHit.collider.gameObject != this.gameObject)
         {
             return;
         }
