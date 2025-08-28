@@ -15,7 +15,7 @@ namespace ARiskyGame.Types
     }
     public abstract class ExpeditionEvent : MonoBehaviour
     {
-        ExpeditionStateController Expedition;
+        LevelStateController Expedition;
         public Node Node;
         public string Title;
         public Sprite Image;

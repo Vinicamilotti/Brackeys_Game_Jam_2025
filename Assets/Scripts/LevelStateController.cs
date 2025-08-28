@@ -3,11 +3,16 @@ using Unity.VisualScripting;
 using UnityEngine;
 using ARiskyGame.Types;
 using System.Linq;
-public class ExpeditionStateController : MonoBehaviour
+public class LevelStateController : MonoBehaviour
 {
-    public Node InitialNode;
+    int Depth;
     public List<Node> Nodes;
-    static Node ActiveNode;
+    public Node InitialNode;
+    Node ActiveNode;
+    public void InitializeLevel(int depth)
+    {
+            Depth = depth;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is create
     public void ResetNodes()
     {
@@ -35,6 +40,11 @@ public class ExpeditionStateController : MonoBehaviour
         }
     }
     void Awake()
+    {
+        InitiateMap();
+    }
+
+    void InitiateMap()
     {
         Nodes = FindObjectsByType<Node>(FindObjectsSortMode.InstanceID).ToList();
         Inject();

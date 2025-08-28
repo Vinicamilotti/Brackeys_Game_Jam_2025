@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using ARiskyGame.Types;
 public class Node : MonoBehaviour
 {
-    public ExpeditionStateController ExpeditionState;
+    public Sprite ActiveSprite;
+    public Sprite InactiveSprite;
+    public LevelStateController ExpeditionState;
     public NodeState State = NodeState.Inactive;
     bool visited;
 
@@ -13,24 +15,23 @@ public class Node : MonoBehaviour
     public void SetState(NodeState state)
     {
         State = state;
-        switch (State)
-        {
-            case NodeState.Active:
-                sprite.color = Color.black;
-                break;
-            case NodeState.CanTravel:
-                sprite.color = Color.yellow;
-                break;
-            case NodeState.Inactive:
-                sprite.color = Color.white;
-                break;
+        SetSprite();
+   }
 
+    private void SetSprite()
+    {
+        if (State != NodeState.Inactive)
+        {
+            sprite.sprite = ActiveSprite;
+            return;
         }
+        sprite.sprite = InactiveSprite;
+ 
     }
  
     public void TravelHere()
     {
-          ExpeditionState.SetActiveNode(this);
+        ExpeditionState.SetActiveNode(this);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
