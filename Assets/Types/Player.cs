@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int Health = 0;
     public int CombatPower = 2;
     public int Fuel = 5;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,5 +15,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        Health -= dmg;
     }
 }

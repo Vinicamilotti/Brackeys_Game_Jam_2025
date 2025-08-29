@@ -1,3 +1,4 @@
+using ARiskyGame.Types;
 using Assets.Types;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,10 @@ public class ExpeditionController : MonoBehaviour
     public GalaxyDepth GalaxyDepth;
     public GameObject LevelContainer;
     public Player Player;
+
+    public int CollectedFood;
+    public int CollectedSpareParts;
+    
     void Awake()
     {
         LevelContainer = GameObject.Find("LevelContainer");
@@ -23,8 +28,25 @@ public class ExpeditionController : MonoBehaviour
     public void StartLevel(GalaxyDepth depth)
     {
         ClearLevel();
+        GalaxyDepth = depth;
         GameObject lvl = LevelPrefabs[(int)depth - 1];
         var instance = Instantiate(lvl, LevelContainer.transform);
         instance.GetComponent<LevelStateController>().InitializeLevel(depth);
+    }
+
+    public void AddLoot(ResourceType res, int quant) 
+    {
+        switch (res) 
+        {
+            case ResourceType.Food:
+                CollectedFood += quant;
+                break;
+            case ResourceType.SpareParts:
+                CollectedSpareParts += quant;
+                break;
+            case ResourceType.Fuel:
+                Player.Fuel += quant;
+                break;
+        }
     }
 }
