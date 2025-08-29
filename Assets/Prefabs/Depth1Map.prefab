@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5819223898939581027}
-  - component: {fileID: 5102483370578828593}
+  - component: {fileID: 7839154081374890995}
   m_Layer: 3
   m_Name: Depth1Map
   m_TagString: Untagged
@@ -42,7 +42,7 @@ Transform:
   - {fileID: 9045142550055419732}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5102483370578828593
+--- !u!114 &7839154081374890995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,8 +55,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Nodes: []
-  InitialNode: {fileID: 3937120556199078055}
+  InitialNode: {fileID: 880053090170475425}
   LastNode: {fileID: 9059724537191930844}
+  PlayerObj: {fileID: 0}
+  Player: {fileID: 0}
+  DialogScreen: {fileID: 3679519506335226434, guid: 8178e34f07d3b514b9cb1e51fe925c5b, type: 3}
   ExpeditionController: {fileID: 0}
 --- !u!1001 &1909801855729702622
 PrefabInstance:
