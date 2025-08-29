@@ -5,6 +5,8 @@ using ARiskyGame.Types;
 using System.Linq;
 using Assets.Types;
 using JetBrains.Annotations;
+using System.ComponentModel;
+using TMPro;
 public class LevelStateController : MonoBehaviour
 {
     GalaxyDepth Depth;
@@ -48,8 +50,8 @@ public class LevelStateController : MonoBehaviour
         PerformEvent();
     }
 
-    void PerformEvent()
-    {
+   void PerformEvent()
+   {
         if(ActiveNode.visited)
         {
             return;
@@ -60,7 +62,10 @@ public class LevelStateController : MonoBehaviour
             return;
         }
 
-        var instance = Instantiate(DialogScreen, GameObject.Find("UI").transform);
+
+        var selectEvent = EventFactory.GetEvent();
+
+        selectEvent.InitiateEvent(this, GameObject.Find("UI"), DialogScreen);
 
     }
     void Inject()
