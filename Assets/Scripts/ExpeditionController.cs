@@ -25,7 +25,6 @@ public class ExpeditionController : MonoBehaviour
         ClearLevel();
         GameObject lvl = LevelPrefabs[(int)depth - 1];
         var instance = Instantiate(lvl, LevelContainer.transform);
-        instance.transform.SetParent(LevelContainer.transform);
         instance.GetComponent<LevelStateController>().InitializeLevel(depth);
     }
 }

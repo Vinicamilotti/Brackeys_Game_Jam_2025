@@ -49,5 +49,5 @@ MonoBehaviour:
   LastNode: {fileID: 0}
   PlayerObj: {fileID: 0}
   Player: {fileID: 0}
-  DialogScreen: {fileID: 3679519506335226434, guid: 8178e34f07d3b514b9cb1e51fe925c5b, type: 3}
+  DialogScreen: {fileID: 1973421879415685014, guid: 0c61b546b72e11a4d9a79e30b5f70231, type: 3}
   ExpeditionController: {fileID: 0}

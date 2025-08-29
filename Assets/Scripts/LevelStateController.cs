@@ -4,6 +4,7 @@ using UnityEngine;
 using ARiskyGame.Types;
 using System.Linq;
 using Assets.Types;
+using JetBrains.Annotations;
 public class LevelStateController : MonoBehaviour
 {
     GalaxyDepth Depth;
@@ -53,7 +54,13 @@ public class LevelStateController : MonoBehaviour
         {
             return;
         }
-        
+
+        if(ActiveNode == InitialNode)
+        {
+            return;
+        }
+
+        var instance = Instantiate(DialogScreen, GameObject.Find("UI").transform);
 
     }
     void Inject()
