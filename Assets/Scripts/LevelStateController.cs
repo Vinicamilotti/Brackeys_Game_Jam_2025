@@ -3,19 +3,23 @@ using Unity.VisualScripting;
 using UnityEngine;
 using ARiskyGame.Types;
 using System.Linq;
+using Assets.Types;
 public class LevelStateController : MonoBehaviour
 {
-    int Depth;
+    GalaxyDepth Depth;
     public List<Node> Nodes;
     public Node InitialNode;
     public Node LastNode;
     public GameObject PlayerObj;
     public Player Player;
+    public GameObject DialogScreen;
     Node ActiveNode;
     public ExpeditionController ExpeditionController;
-    public void InitializeLevel(int depth)
+    public void InitializeLevel(GalaxyDepth depth)
     {
             Depth = depth;
+            InitialNode.SetState(NodeState.CanTravel);
+            SetActiveNode(InitialNode);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is create
     public void ResetNodes()
@@ -40,6 +44,17 @@ public class LevelStateController : MonoBehaviour
         {
             connected.SetState(NodeState.CanTravel);
         }
+        PerformEvent();
+    }
+
+    void PerformEvent()
+    {
+        if(ActiveNode.visited)
+        {
+            return;
+        }
+        
+
     }
     void Inject()
     {
@@ -64,7 +79,6 @@ public class LevelStateController : MonoBehaviour
     void Start()
     {
         GetExpeditionController();
-        SetActiveNode(InitialNode);
     }
 
     void GetExpeditionController()
