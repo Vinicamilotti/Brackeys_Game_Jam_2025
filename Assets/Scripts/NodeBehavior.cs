@@ -7,7 +7,7 @@ public class Node : MonoBehaviour
     public Sprite InactiveSprite;
     public LevelStateController ExpeditionState;
     public NodeState State = NodeState.Inactive;
-    bool visited;
+    public bool visited;
 
     public SpriteRenderer sprite;
     public List<Node> connectedNodes = new();

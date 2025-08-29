@@ -8,7 +8,11 @@ public class LevelStateController : MonoBehaviour
     int Depth;
     public List<Node> Nodes;
     public Node InitialNode;
+    public Node LastNode;
+    public GameObject PlayerObj;
+    public Player Player;
     Node ActiveNode;
+    public ExpeditionController ExpeditionController;
     public void InitializeLevel(int depth)
     {
             Depth = depth;
@@ -24,7 +28,12 @@ public class LevelStateController : MonoBehaviour
 
     public void SetActiveNode(Node node)
     {
+        if (node.State != NodeState.CanTravel) 
+        {
+            return;
+        }
         ResetNodes();
+        PlayerObj.transform.position = node.transform.position;
         node.SetState(NodeState.Active);
         ActiveNode = node;
         foreach (var connected in node.connectedNodes)
@@ -39,8 +48,11 @@ public class LevelStateController : MonoBehaviour
             node.ExpeditionState = this;
         }
     }
+
     void Awake()
     {
+        PlayerObj = GameObject.Find("Player");
+        Player = PlayerObj.GetComponent<Player>();
         InitiateMap();
     }
 
@@ -51,7 +63,13 @@ public class LevelStateController : MonoBehaviour
     }
     void Start()
     {
+        GetExpeditionController();
         SetActiveNode(InitialNode);
+    }
+
+    void GetExpeditionController()
+    {
+        ExpeditionController = GameObject.Find("ExpeditionController").GetComponent<ExpeditionController>();
     }
 
     // Update is called once per frame
