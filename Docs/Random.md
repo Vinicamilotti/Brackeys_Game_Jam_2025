@@ -4,7 +4,7 @@
 ## Jolly Cooperation
 - Title: Jolly Cooperation
 - Description: You found cool aliens with cute faces, waving their little arms. They gift you with: 
-	- (1 - 2) + GalaxyDepth [Fuel](Resources_Fuel.md)
+	- (1) + GalaxyDepth [Fuel](Resources_Fuel.md)
 	- (3 - 4) + GalaxyDepth [Spare parts](Resorces_SpareParts.md)
 	- (2 - 5) * GalaxyDepeth [Food](Resources_food.md)
 ## Wrecked ship

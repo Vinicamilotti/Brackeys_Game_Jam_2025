@@ -12,7 +12,7 @@ public class ExpeditionController : MonoBehaviour
 
     public int CollectedFood;
     public int CollectedSpareParts;
-    
+
     void Awake()
     {
         LevelContainer = GameObject.Find("LevelContainer");
@@ -34,9 +34,9 @@ public class ExpeditionController : MonoBehaviour
         instance.GetComponent<LevelStateController>().InitializeLevel(depth);
     }
 
-    public void AddLoot(ResourceType res, int quant) 
+    public void AddLoot(ResourceType res, int quant)
     {
-        switch (res) 
+        switch (res)
         {
             case ResourceType.Food:
                 CollectedFood += quant;
@@ -46,6 +46,21 @@ public class ExpeditionController : MonoBehaviour
                 break;
             case ResourceType.Fuel:
                 Player.Fuel += quant;
+                break;
+        }
+    }
+    public void RemoveLoot(ResourceType res, int quant)
+    {
+        switch (res)
+        {
+            case ResourceType.Food:
+                CollectedFood -= quant;
+                break;
+            case ResourceType.SpareParts:
+                CollectedSpareParts -= quant;
+                break;
+            case ResourceType.Fuel:
+                Player.Fuel -= quant;
                 break;
         }
     }

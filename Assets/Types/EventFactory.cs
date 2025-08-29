@@ -14,7 +14,7 @@ namespace ARiskyGame.Types
             return eventType switch
             {
                 EventType.Resource => ScriptableObject.CreateInstance<ResourceEncounter>(),
-                EventType.RandomOutput => ScriptableObject.CreateInstance<ResourceEncounter>(),
+                EventType.RandomOutput => ScriptableObject.CreateInstance<RandomOutput>(),
                 EventType.Combat => ScriptableObject.CreateInstance<CombatEvent>(),
                 _ => ScriptableObject.CreateInstance<CombatEvent>(),
             };
