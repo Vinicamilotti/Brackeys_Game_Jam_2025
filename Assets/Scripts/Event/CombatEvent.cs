@@ -85,7 +85,7 @@ public class CombatEvent : ExpeditionEvent
             {
                 new()
                 {
-                    Description = $"Attack ({combatOdds * 100}%)",
+                    Description = $"Attack ({(combatOdds * 100).ToString("F2")}%)",
                     StepAction = Fight
                 },
                 new()

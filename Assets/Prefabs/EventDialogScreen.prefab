@@ -55,7 +55,7 @@ MonoBehaviour:
   TxtTitle: {fileID: 1133852905360793630}
   TxtDescription: {fileID: 5813739615343498640}
   ButtonPanel: {fileID: 9103517024936575763}
-  ButtonPrefab: {fileID: 5548857318719086870, guid: e69c328418592bf489a7dc7e2ad153ee, type: 3}
+  ButtonPrefab: {fileID: 3473131109283321762, guid: e69c328418592bf489a7dc7e2ad153ee, type: 3}
 --- !u!1 &2902827609106820269
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,12 +496,12 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 3
+  m_ChildAlignment: 4
   m_Spacing: 5
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
-  m_ChildScaleWidth: 1
-  m_ChildScaleHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
   m_ReverseArrangement: 0

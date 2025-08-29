@@ -5,6 +5,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 namespace ARiskyGame.Types
 {
+    public enum EventType
+    {
+        Combat,
+        Resource,
+        RandomOutput,
+    }
     public class EventStepAction
     {
         public string Description;
