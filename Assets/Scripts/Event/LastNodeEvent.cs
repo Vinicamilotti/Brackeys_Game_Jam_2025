@@ -36,5 +36,8 @@ public class LastNodeEvent : ExpeditionEvent
                 End();
             }
         });
-       }
+        step.StepAction = stepActions;
+        Steps.Enqueue(step);
+    }
+    
 }
