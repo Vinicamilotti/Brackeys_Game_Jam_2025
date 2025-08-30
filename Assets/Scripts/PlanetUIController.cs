@@ -8,29 +8,42 @@ public class PlanetUIController : MonoBehaviour
     public TMPro.TextMeshProUGUI FoodText;
     public TMPro.TextMeshProUGUI SparePartsText;
     public TMPro.TextMeshProUGUI QntAutomaticFarmText;
+    public TMPro.TextMeshProUGUI CombatPowerText;
     public Planet planet;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        planet = PlanetSingleton.Instance;
     }
 
-    public void Initialize(Planet planet)
+    public void OnClickStartExpedition()
     {
-        this.planet = planet;
-        initialized = true;
+        planet.StartExpedition();
     }
+
+    public void OnClickBuyAutomaticFarm()
+    {
+    }
+    public void OnClickBuyCombatPower()
+    {
+    }
+    public void OnClickBuyFuelGeneration()
+    {
+    }
+    public void OnClickBeatGame()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(!initialized)
-        {
-            return;
-        }
-        WeekText.SetText(planet.week.ToString());
-        FuelGenerationText.SetText(planet.fuelGeneration.ToString());
+
+        WeekText.SetText("Week: " + planet.week.ToString());
+        FuelGenerationText.SetText("Fuel generation: " + planet.fuelGeneration.ToString());
         FoodText.SetText(planet.food.ToString());
         SparePartsText.SetText(planet.spareParts.ToString());
-        QntAutomaticFarmText.SetText(planet.qntAutmaticFarm.ToString());
+        QntAutomaticFarmText.SetText("Automatic Farms: " + planet.qntAutmaticFarm.ToString());
+        CombatPowerText.SetText(planet.combatPower.ToString());
     }
 }

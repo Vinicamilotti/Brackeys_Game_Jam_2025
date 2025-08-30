@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class PlanetSingleton : MonoBehaviour
@@ -11,7 +12,7 @@ public class PlanetSingleton : MonoBehaviour
             {
                 return _instance;
             }
-            var prefab = Resources.Load<GameObject>("PlanetSingletonPrefab");
+            var prefab = Resources.Load<GameObject>("Prefabs/PlanetSingletonPrefab");
             var inScene = Instantiate<GameObject>(prefab);
             _instance = inScene.GetComponent<Planet>();
             if (!_instance)
@@ -19,12 +20,14 @@ public class PlanetSingleton : MonoBehaviour
                 _instance = inScene.AddComponent<Planet>();
             }
 
-            DontDestroyOnLoad(_instance);
+            DontDestroyOnLoad(_instance.transform.root.gameObject);
             return _instance;
 
         }
-            
+
     }
 
- 
+
+
+
 }

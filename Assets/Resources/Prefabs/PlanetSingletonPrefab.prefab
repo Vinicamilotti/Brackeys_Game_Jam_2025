@@ -49,3 +49,4 @@ MonoBehaviour:
   food: 10
   spareParts: 0
   qntAutmaticFarm: 0
+  combatPower: 3

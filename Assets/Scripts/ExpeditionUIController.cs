@@ -20,8 +20,8 @@ public class ExpeditionUIController : MonoBehaviour
     {
         FoodText.SetText(ExpeditionController.CollectedFood.ToString());
         SparePartsText.SetText(ExpeditionController.CollectedSpareParts.ToString());
-        FuelText.SetText(ExpeditionController.Player.Fuel.ToString());
-        HealthText.SetText(ExpeditionController.Player.Health.ToString());
+        FuelText.SetText(ExpeditionController.Fuel.ToString());
+        HealthText.SetText(ExpeditionController.Health.ToString());
         EndText.SetText($"End of Expedition ({(int)ExpeditionController.GalaxyDepth}) fuel)");
     }
 }

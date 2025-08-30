@@ -40,6 +40,7 @@ namespace ARiskyGame.Types
         {
         }
 
+
         public abstract void Init();
         public void InitiateEvent(LevelStateController levelStateController, GameObject canva, GameObject dialogScreen)
         {

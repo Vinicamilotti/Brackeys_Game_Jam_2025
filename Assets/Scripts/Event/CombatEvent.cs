@@ -73,9 +73,9 @@ public class CombatEvent : ExpeditionEvent
     {
         Enemy getEnemy = DeterminateEncouter();
         CombatPower = getEnemy.CombatPower;
-        var combatFactor = (Expedition.Player.CombatPower + CombatPower);
+        var combatFactor = Expedition.ExpeditionController.CombatPower + CombatPower;
 
-        combatOdds = (float)Expedition.Player.CombatPower / (float)combatFactor;
+        combatOdds = (float)Expedition.ExpeditionController.CombatPower / (float)combatFactor;
 
         Title = getEnemy.Title;
         Steps.Enqueue(new()
@@ -110,7 +110,7 @@ public class CombatEvent : ExpeditionEvent
         Expedition.ExpeditionController.AddLoot(lootType, lootQuant);
         if (loseHealth)
         {
-            Expedition.Player.TakeDamage(1);
+            Expedition.ExpeditionController.TakeDamage(1);
 
         }
         Steps.Enqueue(new()
@@ -124,7 +124,7 @@ public class CombatEvent : ExpeditionEvent
 
     void LoseBattle()
     {
-        Expedition.Player.TakeDamage(2);
+        Expedition.ExpeditionController.TakeDamage(2);
 
         Steps.Enqueue(new()
         {

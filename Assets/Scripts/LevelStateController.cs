@@ -14,7 +14,6 @@ public class LevelStateController : MonoBehaviour
     public Node InitialNode;
     public Node LastNode;
     public GameObject PlayerObj;
-    public Player Player;
     public GameObject DialogScreen;
     Node ActiveNode;
     public ExpeditionController ExpeditionController;
@@ -39,6 +38,12 @@ public class LevelStateController : MonoBehaviour
         {
             return;
         }
+
+        if (!ExpeditionController.Travel())
+        {
+            return;
+        }
+        ;
         ResetNodes();
         PlayerObj.transform.position = node.transform.position;
         node.SetState(NodeState.Active);
@@ -52,14 +57,14 @@ public class LevelStateController : MonoBehaviour
         
     }
 
-   void PerformEvent()
-   {
-        if(ActiveNode.visited)
+    void PerformEvent()
+    {
+        if (ActiveNode.visited)
         {
             return;
         }
 
-        if(ActiveNode == InitialNode)
+        if (ActiveNode == InitialNode)
         {
             return;
         }
@@ -68,8 +73,8 @@ public class LevelStateController : MonoBehaviour
         var selectEvent = EventFactory.GetEvent();
 
         selectEvent.InitiateEvent(this, GameObject.Find("UI"), DialogScreen);
-
     }
+    
     void Inject()
     {
         foreach (var node in Nodes)
@@ -81,7 +86,7 @@ public class LevelStateController : MonoBehaviour
     void Awake()
     {
         PlayerObj = GameObject.Find("Player");
-        Player = PlayerObj.GetComponent<Player>();
+        GetExpeditionController();
         InitiateMap();
     }
 
@@ -92,7 +97,6 @@ public class LevelStateController : MonoBehaviour
     }
     void Start()
     {
-        GetExpeditionController();
     }
 
     void GetExpeditionController()
