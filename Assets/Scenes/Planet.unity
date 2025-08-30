@@ -268,6 +268,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlanetPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4038049255593457928, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_Name
+      value: UltraFarmBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184523254970771280, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7928018
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184523254970771280, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184523254970771280, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 56.368
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809988460028242803, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7928018
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809988460028242803, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809988460028242803, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 7913822170714273823, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -287,6 +315,18 @@ PrefabInstance:
     - target: {fileID: 7913822170714273823, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnClickStartExpedition
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461010353027804043, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7928018
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461010353027804043, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461010353027804043, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -74.9
       objectReference: {fileID: 0}
     - target: {fileID: 8615225128971276716, guid: 168dbeeaaea730048b8657ca4cd7595b, type: 3}
       propertyPath: m_LocalPosition.x

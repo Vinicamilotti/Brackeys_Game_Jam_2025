@@ -36,6 +36,12 @@ public class ExpeditionController : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
+        if (LevelInstance != null)
+        {
+            LevelInstance.GetComponent<LevelStateController>().ClearNodes();
+            Destroy(LevelInstance);
+            LevelInstance = null;
+        }
     }
     public void StartLevel(GalaxyDepth depth)
     {

@@ -23,6 +23,18 @@ public class LevelStateController : MonoBehaviour
             InitialNode.SetState(NodeState.CanTravel);
             SetActiveNode(InitialNode);
     }
+    public void ClearNodes()
+    {
+        foreach (var node in FindObjectsByType<Node>(FindObjectsSortMode.InstanceID))
+        {
+            DestroyImmediate(node.gameObject);
+            if (node is not null)
+            {
+                DestroyImmediate(node);
+            }
+        }
+        Nodes.Clear();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is create
     public void ResetNodes()
     {

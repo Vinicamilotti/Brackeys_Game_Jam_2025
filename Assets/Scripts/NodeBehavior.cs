@@ -20,12 +20,21 @@ public class Node : MonoBehaviour
 
     private void SetSprite()
     {
-        if (State != NodeState.Inactive)
+        try
         {
-            sprite.sprite = ActiveSprite;
-            return;
+
+            if (State != NodeState.Inactive)
+            {
+                sprite.sprite = ActiveSprite;
+                return;
+            }
+            sprite.sprite = InactiveSprite;
+
         }
-        sprite.sprite = InactiveSprite;
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Error setting sprite: {ex.Message}");
+        }
  
     }
  
