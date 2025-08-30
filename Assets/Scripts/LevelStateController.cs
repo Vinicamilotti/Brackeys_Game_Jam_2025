@@ -35,7 +35,7 @@ public class LevelStateController : MonoBehaviour
 
     public void SetActiveNode(Node node)
     {
-        if (node.State != NodeState.CanTravel) 
+        if (node.State != NodeState.CanTravel)
         {
             return;
         }
@@ -47,7 +47,9 @@ public class LevelStateController : MonoBehaviour
         {
             connected.SetState(NodeState.CanTravel);
         }
+   
         PerformEvent();
+        
     }
 
    void PerformEvent()
@@ -62,7 +64,7 @@ public class LevelStateController : MonoBehaviour
             return;
         }
 
-
+        ActiveNode.visited = true;
         var selectEvent = EventFactory.GetEvent();
 
         selectEvent.InitiateEvent(this, GameObject.Find("UI"), DialogScreen);
