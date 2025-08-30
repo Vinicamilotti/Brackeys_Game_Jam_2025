@@ -2,6 +2,7 @@ using ARiskyGame.Types;
 using Assets.Types;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExpeditionController : MonoBehaviour
 {
