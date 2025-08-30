@@ -27,7 +27,7 @@ public class Planet : MonoBehaviour
     }
     public void BuyCombatPower()
     {
-        if (spareParts >= 50)
+        if (spareParts >= 20)
         {
             combatPower += 1;
             spareParts -= 15;

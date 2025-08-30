@@ -23,16 +23,19 @@ public class PlanetUIController : MonoBehaviour
 
     public void OnClickBuyAutomaticFarm()
     {
+        planet.BuyAutomaticFarm();
     }
     public void OnClickBuyCombatPower()
     {
+        planet.BuyCombatPower();
     }
     public void OnClickBuyFuelGeneration()
     {
+        planet.BuyFuelGeneration();
     }
     public void OnClickBeatGame()
     {
-
+        planet.BuyBeatGame();
     }
 
     // Update is called once per frame

@@ -71,8 +71,17 @@ public class LevelStateController : MonoBehaviour
 
         ActiveNode.visited = true;
         var selectEvent = EventFactory.GetEvent();
+        if (ActiveNode == LastNode)
+        {
+            selectEvent = ScriptableObject.CreateInstance<LastNodeEvent>();
+        }
 
-        selectEvent.InitiateEvent(this, GameObject.Find("UI"), DialogScreen);
+        PerformEvent(selectEvent);
+    }
+
+    public void PerformEvent(ExpeditionEvent evnt)
+    {
+        evnt.InitiateEvent(this, GameObject.Find("UI"), DialogScreen);
     }
     
     void Inject()

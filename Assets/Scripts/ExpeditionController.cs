@@ -5,11 +5,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum ExpeditionFaliedMotive
+{
+    OutOfFuel,
+    Destroyed
+}
 public class ExpeditionController : MonoBehaviour
 {
     public List<GameObject> LevelPrefabs;
     public GalaxyDepth GalaxyDepth;
     public GameObject LevelContainer;
+    public GameObject LevelInstance;
     public int Fuel;
     public int CombatPower;
     public int Health;
@@ -36,15 +42,15 @@ public class ExpeditionController : MonoBehaviour
         ClearLevel();
         GalaxyDepth = depth;
         GameObject lvl = LevelPrefabs[(int)depth - 1];
-        var instance = Instantiate(lvl, LevelContainer.transform);
-        instance.GetComponent<LevelStateController>().InitializeLevel(depth);
+        LevelInstance = Instantiate(lvl, LevelContainer.transform);
+        LevelInstance.GetComponent<LevelStateController>().InitializeLevel(depth);
     }
     public bool Travel()
     {
         Fuel--;
         if (Fuel < 0)
         {
-            FailMission();
+            FailMission(ExpeditionFaliedMotive.OutOfFuel);
             return false;
         }
         return true;
@@ -54,7 +60,7 @@ public class ExpeditionController : MonoBehaviour
         Health -= dmg;
         if (Health <= 0)
         {
-            FailMission();
+            FailMission(ExpeditionFaliedMotive.Destroyed);
         }
     }
     public void AddLoot(ResourceType res, int quant)
@@ -88,11 +94,13 @@ public class ExpeditionController : MonoBehaviour
         }
     }
 
-    public void FailMission()
+    public void FailMission(ExpeditionFaliedMotive motive)
     {
         CollectedFood = 0;
         CollectedSpareParts = 0;
-        EndExpedition();
+        var evnt = ScriptableObject.CreateInstance<ExpeditionFaliedEvent>();
+        evnt.SetMotive(motive);
+        LevelInstance.GetComponent<LevelStateController>().PerformEvent(evnt);
     }
     public void EndExpedition()
     {
